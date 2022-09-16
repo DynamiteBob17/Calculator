@@ -27,7 +27,7 @@ public class ButtonPanel extends JPanel {
 	
 	private static final Dimension RES = Toolkit.getDefaultToolkit().getScreenSize();
 	private float radDegAndRightButtonFontSize = (float) (35.0 * (RES.width / 1920.0));
-	private float darkButtonFontSize = (float) (30.0 * (RES.width / 1920.0));
+	private float darkButtonFontSize = (float) (29.0 * (RES.width / 1920.0));
 	
 	private List<JGradientButton> buttons;
 	

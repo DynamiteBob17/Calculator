@@ -8,6 +8,7 @@ public class Result {
 	public static String calculate(String text, boolean isRadians) {
 		text = text.replaceAll("π", "pi");
 		text = text.replaceAll("log", "log10");
+		text = closeExpression(text);
 		Expression e = new Expression(text);
 		
 		if (isRadians)
@@ -21,6 +22,22 @@ public class Result {
 			return resText.substring(0, resText.length() - 2);
 		else
 			return resText;
+	}
+	
+	private static String closeExpression(String text) {
+		int leftParentheses = text.chars()
+								.reduce(0, (count, character) -> character == '(' ? count + 1 : count),
+			rightParentheses = text.chars()
+				 				 .reduce(0, (count, character) -> character == ')' ? count + 1 : count);
+		
+		for (int i = 0; i < leftParentheses - rightParentheses; ++i) {
+			text += ")";
+		}
+		for (int i = 0; i < rightParentheses - leftParentheses; ++i) {
+			text = "(" + text;
+		}
+		
+		return text;
 	}
 	
 //  private static final double ZERO_THRESHOLD = 1e-13;
