@@ -27,7 +27,7 @@ public class ButtonPanel extends JPanel {
 	
 	private static final Dimension RES = Toolkit.getDefaultToolkit().getScreenSize();
 	private float radDegAndLightButtonFontSize = (float) (35.0 * (RES.width / 1920.0));
-	private float darkButtonFontSize = (float) (29.0 * (RES.width / 1920.0));
+	private float darkButtonFontSize = (float) (24.0 * (RES.width / 1920.0));
 	
 	private List<JGradientButton> buttons;
 	
@@ -235,7 +235,6 @@ public class ButtonPanel extends JPanel {
 			
 			String res = Result.calculate(currentText, this.isRadians());
 			textField.setText(res);
-			window.setPressedEnterOrEquals(true);
 			window.setPrevResult(res);
 		});
 		
@@ -279,7 +278,6 @@ public class ButtonPanel extends JPanel {
 			String optionalMultiplicationSign = "";
 			
 			if (lastChar == '!' || lastChar == ')' || lastChar == 'e' || lastChar == 'π' || Character.isDigit(lastChar))  {
-				if (!window.isPressedEnterOrEquals())
 					optionalMultiplicationSign = "*";
 			}
 			

@@ -30,11 +30,11 @@ public class InverseListener implements ActionListener {
 	}
 	
 	private void flip() {
-		change(Help.SINE, "arcsin");
+		change(Help.SINE, "asin");
 		change(Help.NAT_LOG, "<html>e<sup>x</sup></html>");
-		change(Help.COSINE, "arccos");
+		change(Help.COSINE, "acos");
 		change(Help.LOG, "<html>10<sup>x</sup></html>");
-		change(Help.TANGENS, "arctan");
+		change(Help.TANGENS, "atan");
 		change(Help.SQRT, "<html>x<sup>2</sup></html>");
 	}
 	

@@ -30,7 +30,6 @@ public class KeyActions extends KeyAdapter {
 				return;
 			String res = Result.calculate(currentText, buttonPanel.isRadians());
 			textField.setText(res);
-			window.setPressedEnterOrEquals(true);
 			window.setPrevResult(res);
 		}
 		
@@ -44,7 +43,8 @@ public class KeyActions extends KeyAdapter {
 				|| c == 's' || c == 'i' || c == 'n'
 				|| c == 'l' || c == 'c' || c == 'o'
 				|| c == 'g' || c == 't' || c == 'a'
-				|| c == 'q' || c == 'r' || c == 'b') {
+				|| c == 'q' || c == 'r' || c == 'b'
+				|| Character.isWhitespace(c)) {
 		} else {
 			window.getToolkit().beep();
 			e.consume();

@@ -22,7 +22,6 @@ public class CalculatorFrame extends JFrame {
 	private JMyTextField textField;
 	
 	private String prevResult = "";
-	private boolean pressedEnterOrEquals = false;
     
 	public CalculatorFrame() {
 		super();
@@ -34,7 +33,7 @@ public class CalculatorFrame extends JFrame {
 		setPreferredSize(new Dimension(width / 2, height / 2));
 		setTitle("Calculator");
 		
-		textField = new JMyTextField(CHAR_LIMIT, this);
+		textField = new JMyTextField(CHAR_LIMIT);
 		textField.setFont(textField.getFont().deriveFont((float) width / 35));
 		textField.setDocument(new JTextFieldLimit(CHAR_LIMIT));
 		textField.setHorizontalAlignment(SwingConstants.RIGHT);
@@ -60,14 +59,6 @@ public class CalculatorFrame extends JFrame {
 	
 	public String getPrevResult() {
 		return prevResult;
-	}
-
-	public boolean isPressedEnterOrEquals() {
-		return pressedEnterOrEquals;
-	}
-
-	public void setPressedEnterOrEquals(boolean pressedEnterOrEquals) {
-		this.pressedEnterOrEquals = pressedEnterOrEquals;
 	}
 	
 	public static void main(String[] args) {
