@@ -26,7 +26,7 @@ public class ButtonPanel extends JPanel {
 	private JGradientToggleButton inverseBtn;
 	
 	private static final Dimension RES = Toolkit.getDefaultToolkit().getScreenSize();
-	private float radDegAndRightButtonFontSize = (float) (35.0 * (RES.width / 1920.0));
+	private float radDegAndLightButtonFontSize = (float) (35.0 * (RES.width / 1920.0));
 	private float darkButtonFontSize = (float) (29.0 * (RES.width / 1920.0));
 	
 	private List<JGradientButton> buttons;
@@ -92,7 +92,7 @@ public class ButtonPanel extends JPanel {
 				mainColor = new Color (100, 255, 255); 
 				secondaryColor = Color.WHITE;
 				fontColor = Color.DARK_GRAY;
-				fontSize = radDegAndRightButtonFontSize;
+				fontSize = radDegAndLightButtonFontSize;
 			}
 			
 			JGradientButton btn = new JGradientButton(Help.BTN_TEXTS[i], mainColor, secondaryColor, fontColor, fontSize);
@@ -102,8 +102,8 @@ public class ButtonPanel extends JPanel {
 		}
 		radiansBtn.setFocusable(false);
 		degreesBtn.setFocusable(false);
-		radiansBtn.setFont(radiansBtn.getFont().deriveFont(radDegAndRightButtonFontSize));
-		degreesBtn.setFont(degreesBtn.getFont().deriveFont(radDegAndRightButtonFontSize));
+		radiansBtn.setFont(radiansBtn.getFont().deriveFont(radDegAndLightButtonFontSize));
+		degreesBtn.setFont(degreesBtn.getFont().deriveFont(radDegAndLightButtonFontSize));
 		
 		Color deletionBtnsColor = new Color(255, 100, 0);
 		buttons.get(Help.CLEAR).setBackground(deletionBtnsColor);
